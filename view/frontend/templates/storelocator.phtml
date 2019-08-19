@@ -1,0 +1,55 @@
+<?php
+
+// @codingStandardsIgnoreFile
+/** @var \Iproger\StoreLocator\Block\StoreLocator $block */
+?>
+
+<div class="storelocator-container">
+    <div class="block store-list">
+        <div class="block-content">
+            <ul></ul>
+        </div>
+    </div>
+    <div class="block store-map">
+        <div class="block-content">
+            <div class="store-location-map">
+                <div id="store-map-canvas"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .storelocator-container {
+        overflow: hidden;
+    }
+    .storelocator-container .block {
+        float: left;
+    }
+    .storelocator-container .store-list {
+        width: 30%;
+    }
+    .storelocator-container .store-map {
+        width: 70%;
+    }
+    .storelocator-container .store-location-map {
+        height: 500px;
+        width: 100%;
+    }
+    .storelocator-container #store-map-canvas {
+        height: 500px;
+        width: 100%;
+    }
+</style>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=<?= $block->getMapApiKey() ?>"></script>
+
+<script type="text/x-magento-init">
+{
+    ".storelocator-container": {
+        "Iproger_StoreLocator/js/store-locator": {
+            "storeAddresses": <?= $block->getStoreAddresses() ?>
+        }
+    }
+}
+</script>

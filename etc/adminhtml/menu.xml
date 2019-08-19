@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Iproger_StoreLocator::location" title="Store Locator" module="Iproger_StoreLocator"
+             sortOrder="10" resource="Iproger_StoreLocator::location" parent="Magento_Backend::stores"/>
+        <add id="Iproger_StoreLocator::location_location" title="Locations" module="Iproger_StoreLocator" sortOrder="1" resource="Iproger_StoreLocator::location"
+             action="storelocator/location" parent="Iproger_StoreLocator::location"/>
+    </menu>
+</config>
